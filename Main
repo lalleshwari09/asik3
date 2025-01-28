@@ -1,0 +1,15 @@
+public class Main {
+    public static void main(String[] args) {
+        DatabaseManager dbManager = new DatabaseManager();
+
+        dbManager.addItem(new Item(1, "Lipstick", 3000));
+        dbManager.addItem(new Item(2, "Perfume", 15000));
+        dbManager.addCustomer(new Customer(1, "Sasha", 87012345678L));
+        dbManager.addOrder(new Order(1, new Item(1, "Lipstick", 3000), 2, new Customer(1, "Sasha", 87012345678L)));
+
+        System.out.println("All orders:");
+        for (Order order : dbManager.getAllOrders()) {
+            System.out.println(order);
+        }
+    }
+}

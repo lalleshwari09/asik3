@@ -1,0 +1,36 @@
+public class Customer {
+    private int customerid;
+    private String name;
+    private long number;
+
+    public Customer(int customerid, String name, long number) {
+        this.customerid = customerid;
+        this.name = name;
+        this.number = number;
+    }
+
+    public int getCustomerid() {
+        return customerid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public long getNumber() {
+        return number;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Customer customer = (Customer) obj;
+        return customerid == customer.customerid && number == customer.number && name.equals(customer.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(customerid, name, number);
+    }
+}

@@ -1,0 +1,10 @@
+public class Item extends Product {
+    public Item(int itemid, String name, double price) {
+        super(itemid, name, price);
+    }
+
+    @Override
+    public String displayInfo() {
+        return "Item: " + getName() + " | Price: " + getPrice() + " ₸";
+    }
+}
