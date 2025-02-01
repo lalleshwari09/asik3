@@ -10,6 +10,27 @@ public class Main {
         System.out.println("All orders:");
         for (Order order : dbManager.getAllOrders()) {
             System.out.println(order);
+
+        }
+          System.out.println("Deleting item:");
+        dbManager.deleteItem(2);
+
+        System.out.println("Deleting customer:");
+        dbManager.deleteCustomer(1);
+
+        System.out.println("All orders after deletions:");
+        for (Order order : dbManager.getAllOrders()) {
+            System.out.println(order);
+        }
+            System.out.println("Updating item:");
+        dbManager.updateItem(1, new Item(1, "Updated Lipstick", 3500));
+
+        System.out.println("Updating customer:");
+        dbManager.updateCustomer(1, new Customer(1, "Sasha Updated", 87012345679L));
+
+        System.out.println("All orders after updates:");
+        for (Order order : dbManager.getAllOrders()) {
+            System.out.println(order);
         }
     }
 }
